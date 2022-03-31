@@ -1,98 +1,90 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Layout 2</title>
-        <style>
-            .BT {
-                width: 120px;
-                height: 120px;
-                margin: 10px;
-                background-color: rgb(35, 175, 240);
-                display: block;
-                float: left;
-            }
-            .H {
-                width: 300px;
-                height: 120px;
-                margin: 10px;
-                background-color: rgb(72, 253, 72);
-                display: block;
-                float: left; 
-            }
-            .BM {
-                width: 290px;
-                height: 120px;
-                margin: 10px;
-                background-color: skyblue;
-                display: block;
-                float: left;  
-            }
-            .tinggi1 {
-                width: 290px;
-                height: 160px;
-                margin: 10px;
-                background-color: rgb(255, 255, 152);
-                display: block;
-                float: left;     
-            }
-            .tinggi2 {
-                width: 290px;
-                height: 130px;
-                margin-top: 40px;
-                margin-left: 10px;
-                margin-right: 10px;
-                background-color: rgb(255, 255, 152);
-                display: block;
-                float: left;  
-            }
-            .tinggi3 {
-                width: 290px;
-                height: 100px;
-                margin-top: 70px;
-                margin-left: 10px;
-                margin-right: 10px;
-                background-color: rgb(255, 255, 152);
-                display: block;
-                float: left;  
-            }
-            .tinggi4 {
-                width: 290px;
-                height: 70px;
-                margin-top: 100px;
-                margin-left: 10px;
-                margin-right: 10px;
-                background-color: rgb(255, 255, 152);
-                display: block;
-                float: left;  
-            }
-        </style>
-        <body>
-         <div class="biru tua">
-             <div class="BT"></div>
-         </div> 
-         <div class="hijau">
-             <div class="H"></div>
-             <div class="H"></div>
-             <div class="H"></div>
-         </div>
-         <div class="biru tua">
-            <div class="BT"></div>
-         </div>
-         <div class="biru muda">
-             <div class="BM"></div>
-             <div class="BM"></div>
-             <div class="BM"></div>
-             <div class="BM"></div>
-             <div class="BM"></div>
-             <div class="BM"></div>
-             <div class="BM"></div>
-             <div class="BM"></div>
-         </div>
-         <div class="kuning">
-             <div class="tinggi1"></div>
-             <div class="tinggi2"></div>
-             <div class="tinggi3"></div>
-             <div class="tinggi4"></div>
-         </div>
-        </body>
-    </head>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rachel's Resume</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .tab {
+            padding-left: 25px;
+            padding-right: 25px;
+            padding-top: 3px;
+            padding-bottom: 8px;
+            margin-right: 16.5px;
+            background-color: lavender;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            float: left;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: large;
+            font-weight: medium;
+        }
+
+        .box{
+            width: 500px;
+            height: 300px;
+            padding: 15px;
+            background-color: lavender;
+            border-radius: 15px;
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+        }
+
+
+        h1 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20pt;
+            font-weight: medium;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        h2 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12pt;
+            font-weight: lighter;
+            margin: 10px;
+            text-align: left;
+        }
+
+    </style>
+    <script>
+     var dataku = [
+            '<h1>Get to Know Rachel</h1><h2>Hi, I am Rachel Williams Darmana, currently 19 years-old. Is now a student of Universitas Pelita Harapan enrolling in Visual Communication Design, focusing on Graphic Design.</h2><h2>Through the guidance of the Professors here, I have sharpened my sense and discovered new skills for different kinds of composition making.</h2>',
+            '<h1>Primary</h1><h2>I acomplished my primary days in an international school known as Sekolah Bina Persada.</h2><h1>Junior High School & High School</h1><h2>For both Junior High School and High School, I enrolled in another international school known as BPK Banda</h2><h1>Univeristy</h1><h2>For University, I went to Universitas Pelita Harapan enrolling in Visual Communication Design, focusing on Graphic Design.</h2>',
+            '<h1>Source of Happiness</h1><h2>Have been interested in drawing since my kindergarten days and have been practicing to the skills and techniques I possess now. I used to love drawing humans, especially the eyes because of how it differs with different people. I would always observe my own eyes through the mirror, trying to capture the details.</h2><h2>Putting aside drawing, I love anything that has meat on it, preferably no innards. Apart from that, I have been developing great amount of interest for comics (manhwa, manga), even more than watching. This plus laying down on the comfortable bed will forever be the best combination ever.</h2>'
+            ];
+    </script>
+</head>
+<body>
+    <div id="resume" class="box"></div>
+    <div id="tabsatu" class="tab" onclick="ubahwarna('greenyellow', 'tabsatu', dataku[0])">A B O U T</div>
+    <div id="tabdua" class="tab" onclick="ubahwarna('orange', 'tabdua', dataku[1])">E D U C A T I O N</div>
+    <div id="tabtiga" class="tab" onclick="ubahwarna('hotpink', 'tabtiga', dataku[2])">I N T E R E S T</div>
+</body>
+</html>
+    <script>
+    function ubahwarna (x,y,z) {
+    document.querySelector('#resume').style.backgroundColor = x;
+    document.querySelector('#resume').innerHTML = z;
+    if (y == 'tabsatu') {   
+    document.querySelector('#tabsatu').style.backgroundColor = 'greenyellow';
+    document.querySelector('#tabdua').style.backgroundColor = 'white';
+    document.querySelector('#tabtiga').style.backgroundColor = 'white';
+    }
+    else if (y == 'tabdua') {   
+    document.querySelector('#tabsatu').style.backgroundColor = 'white';
+    document.querySelector('#tabdua').style.backgroundColor = 'orange';
+    document.querySelector('#tabtiga').style.backgroundColor = 'white';
+    }
+    else  {
+    document.querySelector('#tabsatu').style.backgroundColor = 'white';
+    document.querySelector('#tabdua').style.backgroundColor = 'white';
+    document.querySelector('#tabtiga').style.backgroundColor = 'hotpink';
+    }
+    }
+    </script>
